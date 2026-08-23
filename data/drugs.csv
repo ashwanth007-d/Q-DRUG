@@ -1,0 +1,27 @@
+candidate_id,name,target,smiles,binding_affinity,quantum_energy,activity,toxicity,solubility,druglikeness,mw,logp,hbd,hba,rotb,data_type,qdrug_score
+QD-101,Nirmatrelvir-Q1,SARS-CoV-2 Mpro,CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C,8.85,-145.32,0.92,0.12,0.81,0.88,499.53,1.85,3,7,6,demonstration,77.92
+QD-102,Osimertinib-Q2,EGFR Kinase T790M,CN1CCN(CC1)C2=CC(=C(C=C2)NC(=O)C=C)NC3=NC=CC(=N3)C4=CN(C5=CC=CC=C54)C,9.15,-210.65,0.95,0.18,0.74,0.91,499.61,3.42,2,8,7,demonstration,82.38
+QD-103,Verubecestat-Q3,Alzheimer's BACE1,CC1(N=C(NC1=O)N)C2=C(C=CC(=C2)NC(=O)C3=NC=C(C=C3)C(F)(F)F)F,8.4,-188.4,0.86,0.15,0.78,0.85,409.34,2.1,3,6,3,demonstration,74.97
+QD-104,MRTX-G12D-Q4,KRAS G12D,CN1CCN(CC1)C2=CC=C(C=C2)C3=C4C=C(C=CC4=NC(=N3)NC5=CC=C(C=C5)F)N,9.05,-195.8,0.93,0.14,0.72,0.89,468.53,3.15,2,6,5,demonstration,80.44
+QD-105,Cov-Protease-Inh-A,SARS-CoV-2 Mpro,CC(C)CC(C(=O)NC(C1CCCCC1)C(=O)NC#N)NC(=O)OCC2=CC=CC=C2,7.95,-120.15,0.8,0.22,0.68,0.82,443.54,2.9,3,5,8,demonstration,65.01
+QD-106,Gefitinib-V2,EGFR Kinase T790M,COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCCCN4CCOCC4,7.8,-175.2,0.78,0.25,0.65,0.84,446.9,3.2,1,7,7,demonstration,66.01
+QD-107,Atabecestat-A,Alzheimer's BACE1,CC1(N=C(NC1=O)N)C2=C(C=CC(=C2)NC(=O)C3=CN=CC(=C3)F)F,8.1,-165.75,0.83,0.19,0.75,0.87,359.31,1.75,3,5,3,demonstration,70.89
+QD-108,Sotorasib-K2,KRAS G12D,CC1=C(C=C(C=C1)C2=C3C(=NC(=N2)N4CCCC4C#N)C=CC(=O)N3C)F,8.65,-182.3,0.89,0.16,0.7,0.88,424.47,2.85,0,6,3,demonstration,75.91
+QD-109,Ritonav-Mpro-Lead,SARS-CoV-2 Mpro,CC(C)C1=NC(=CS1)CN(C)C(=O)NC(C(C)C)C(=O)NC(CC2=CC=CC=C2)CC(C(CC3=CC=CC=C3)NC(=O)OCC4=CN=CS4)O,8.25,-240.1,0.85,0.3,0.55,0.65,720.95,4.8,4,9,18,demonstration,68.5
+QD-110,Erlotinib-E3,EGFR Kinase T790M,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,7.5,-160.4,0.75,0.2,0.8,0.86,393.44,2.7,1,6,8,demonstration,65.92
+QD-111,Elenbecestat-B2,Alzheimer's BACE1,CC1(N=C(NC1=O)N)C2=CC(=CC=C2)C3=CN=C(C=C3)C(F)(F)F,8.0,-150.9,0.81,0.17,0.73,0.85,341.32,1.95,3,4,2,demonstration,68.75
+QD-112,Adagrasib-K12,KRAS G12D,CC(C)N1CCN(CC1)C2=NC=NC3=C2C=C(C=C3)C4=C(C=CC=C4Cl)Cl,8.8,-205.1,0.9,0.21,0.65,0.83,427.37,3.9,0,5,4,demonstration,76.16
+QD-113,Ensitrelvir-M1,SARS-CoV-2 Mpro,CC1=CN=C(C(=N1)NC2=CC(=CC=C2)F)C3=CN(N=C3)CC4=CC=C(C=C4)F,8.7,-170.8,0.91,0.1,0.82,0.9,403.39,2.65,1,6,5,demonstration,78.74
+QD-114,Brigatinib-E4,EGFR Kinase T790M,CN1CCN(CC1)C2=CC=C(C=C2)NC3=NC=C(C(=N3)Cl)C4=C(C=CC=C4P(=O)(C)C)Cl,8.9,-225.4,0.92,0.24,0.6,0.79,584.05,3.75,1,6,6,demonstration,76.52
+QD-115,Lanabecestat-L1,Alzheimer's BACE1,CC1(N=C(NC1=O)N)C2=CC(=CC=C2)C3=CN=C(C=C3)C#N,7.75,-140.25,0.77,0.13,0.85,0.89,298.32,1.45,3,4,2,demonstration,68.71
+QD-116,K-Ras-Binder-X7,KRAS G12D,CC1=C(C=CC=C1)C2=NC(=NC=C2)NC3=CC=C(C=C3)S(=O)(=O)N,7.45,-135.6,0.74,0.18,0.79,0.86,341.4,2.1,2,5,4,demonstration,64.23
+QD-117,Lufotrelvir-L2,SARS-CoV-2 Mpro,CC(C)CC(C(=O)NC(C1CCCCC1)C(=O)NC(C2CCNC2=O)C#N)NC(=O)OCC3=CC=CC=C3,8.55,-180.9,0.88,0.15,0.77,0.87,512.65,2.6,3,6,10,demonstration,76.05
+QD-118,Dacomitinib-D1,EGFR Kinase T790M,COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCC=CC(=O)N4CCCC4,8.3,-198.7,0.84,0.28,0.62,0.81,469.94,3.65,1,6,8,demonstration,70.19
+QD-119,BACE-Inhibitor-CX,Alzheimer's BACE1,CC1(C2=CC(=CC=C2)C3=CN=CC=C3)N=C(NC1=O)N,7.6,-132.1,0.76,0.11,0.88,0.91,281.31,1.3,3,3,2,demonstration,68.16
+QD-120,KRAS-SwitchII-S9,KRAS G12D,CN1CCN(CC1)C2=C(C=C(C=C2)Cl)C3=NC(=NC=C3)NC4=CC=C(C=C4)F,8.2,-168.3,0.82,0.19,0.71,0.85,412.87,3.4,1,5,4,demonstration,70.52
+QD-121,Boceprevir-M2,SARS-CoV-2 Mpro,CC(C)(C)NC(=O)C1C2CC3C(C2)C31C(=O)NC(C(C(C)(C)C)NC(=O)NC(C)(C)C)C(=O)C(=O)N,7.3,-155.0,0.72,0.26,0.66,0.75,519.68,2.45,4,5,9,demonstration,59.5
+QD-122,Afatinib-A3,EGFR Kinase T790M,CN(C)CC=CC(=O)NC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)Cl)F)OCC4CCOC4,8.6,-215.8,0.87,0.27,0.64,0.8,485.94,3.3,1,7,8,demonstration,73.69
+QD-123,Umibecestat-U1,Alzheimer's BACE1,CC1(N=C(NC1=O)N)C2=C(C=CC(=C2)NC(=O)C3=CN=C(C=C3)C(F)F)F,8.25,-162.4,0.85,0.14,0.79,0.88,377.31,1.8,3,5,3,demonstration,73.27
+QD-124,KRAS-G12D-Lead-99,KRAS G12D,CC1=CC=C(C=C1)C2=NC(=NC=C2)N3CCN(CC3)C4=CC=CC=C4F,8.75,-189.5,0.89,0.16,0.76,0.87,390.46,3.1,0,5,3,demonstration,77.62
+QD-125,Paxlovid-Analog-X,SARS-CoV-2 Mpro,CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)F)C(=O)NC(CC3CCNC3=O)C#N)C,8.95,-152.1,0.94,0.11,0.84,0.9,481.54,1.7,3,6,6,demonstration,80.1
+QD-101-OPT,Nirmatrelvir-Q1 + Hydroxylation,SARS-CoV-2 Mpro,CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)CO,9.1,-148.44,0.96,0.1,0.99,0.88,499.53,1.85,3,7,6,demonstration / lead optimized,83.27
