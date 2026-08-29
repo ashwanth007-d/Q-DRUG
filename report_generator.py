@@ -158,9 +158,16 @@ def generate_scientific_html_report(target_info, candidate_row, lipinski_info, a
     </div>
 
     <div class="report-section">
-        <h3>2. Top Candidate & Lipinski Rule of 5 Evaluation</h3>
-        <p><b>Candidate Molecule:</b> {candidate_row.get('name', 'Nirmatrelvir-Q1')} (ID: {candidate_row.get('candidate_id', 'QD-101')})</p>
-        <p><b>SMILES:</b> <code style="font-size:11px;">{candidate_row.get('smiles', '')}</code></p>
+        <h3>2. Top Candidate & PubChem Real Molecular Profile</h3>
+        <p><b>Candidate Molecule:</b> {candidate_row.get('name', 'Erlotinib')} (PubChem CID: <b>{candidate_row.get('pubchem_cid', '176870')}</b>)</p>
+        <p><b>IUPAC Name:</b> <i>{candidate_row.get('iupac_name', 'N/A')}</i></p>
+        <p><b>Molecular Formula:</b> {candidate_row.get('formula', 'N/A')} | <b>Molecular Weight:</b> {candidate_row.get('mw', 0.0)} Da</p>
+        <p><b>Canonical SMILES:</b> <code style="font-size:11px;">{candidate_row.get('canonical_smiles', candidate_row.get('smiles', ''))}</code></p>
+        <p><b>Isomeric SMILES:</b> <code style="font-size:11px;">{candidate_row.get('isomeric_smiles', candidate_row.get('smiles', ''))}</code></p>
+        <p><b>Quantum-Inspired Candidate Score:</b> <b style="color:#00f0ff; font-size:16px;">{candidate_row.get('qdrug_score', 0.0)} / 100</b></p>
+        <p><b>Data Source:</b> Compound data sourced from PubChem.</p>
+        <hr style="border:0; border-top:1px solid #e2e8f0; margin:15px 0;"/>
+        <h4>Lipinski Rule of 5 Evaluation</h4>
         <table class="report-table">
             <tr><th>Property</th><th>Value</th><th>Lipinski Threshold</th><th>Status</th></tr>
             <tr><td>Molecular Weight (MW)</td><td>{lipinski_info['mw']['val']} Da</td><td>&lt; 500 Da</td><td>{"PASS" if lipinski_info['mw']['pass'] else "FAIL"}</td></tr>

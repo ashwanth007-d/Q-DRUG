@@ -24,6 +24,58 @@ THEME_COLORS = {
 
 # Predefined Therapeutic Targets
 PREDEFINED_TARGETS = {
+    "EGFR Kinase T790M": {
+        "pdb_id": "3W23",
+        "name": "Epidermal Growth Factor Receptor Kinase (T790M Mutation)",
+        "disease": "Non-Small Cell Lung Cancer (NSCLC)",
+        "category": "Receptor Tyrosine Kinase / Oncology",
+        "description": "Gatekeeper mutation T790M in EGFR kinase domain causing resistance to 1st/2nd generation TKIs. Targeted by covalent 3rd-gen inhibitors.",
+        "active_residues": ["Met790", "Lys745", "Thr790", "Leu792", "Asp855"],
+        "pocket_info": "ATP-binding cleft modified by bulky methionine gatekeeper residue.",
+        "pocket_volume_text": "Pocket volume: Demo estimate / not experimentally validated",
+        "pocket_volume_val": 915.0,
+        "drugability_summary": "High drugability score (0.91). Targeted covalent binding pocket.",
+        "default_ligand_name": "Osimertinib (CID 71496458)"
+    },
+    "BRAF V600E": {
+        "pdb_id": "4S1Y",
+        "name": "B-Raf Proto-Oncogene Serine/Threonine Kinase (V600E)",
+        "disease": "Metastatic Melanoma & Colorectal Cancer",
+        "category": "MAPK Pathway Kinase / Oncology",
+        "description": "Valine-to-Glutamate oncogenic driver mutation at residue 600 locking BRAF into constitutively active monomeric kinase conformation.",
+        "active_residues": ["Glu600", "Lys483", "Glu501", "Phe595", "Asp594"],
+        "pocket_info": "ATP-binding cleft and DFG-out allosteric pocket.",
+        "pocket_volume_text": "Pocket volume: Demo estimate / not experimentally validated",
+        "pocket_volume_val": 880.0,
+        "drugability_summary": "High drugability (0.94). Well-established ATP-competitive kinase target.",
+        "default_ligand_name": "Vemurafenib (CID 42611257)"
+    },
+    "VEGFR2 Receptor": {
+        "pdb_id": "4S15",
+        "name": "Vascular Endothelial Growth Factor Receptor 2 (VEGFR2 / KDR)",
+        "disease": "Tumor Angiogenesis & Solid Tumors",
+        "category": "Angiogenesis Receptor / Oncology",
+        "description": "Primary mediator of VEGF-driven tumor angiogenesis and vascular permeability. Key target for anti-angiogenic kinase inhibitors.",
+        "active_residues": ["Glu885", "Lys868", "Cys919", "Asp1046", "Phe1047"],
+        "pocket_info": "ATP-binding cleft and adjacent hydrophobic back pocket.",
+        "pocket_volume_text": "Pocket volume: Demo estimate / not experimentally validated",
+        "pocket_volume_val": 940.0,
+        "drugability_summary": "High drugability (0.92). Hydrophobic back pocket supports Type-II inhibitors.",
+        "default_ligand_name": "Axitinib (CID 6450551)"
+    },
+    "HER2 / ERBB2": {
+        "pdb_id": "3RCD",
+        "name": "Human Epidermal Growth Factor Receptor 2 (HER2 / ERBB2)",
+        "disease": "HER2-Positive Breast Cancer & Gastric Cancer",
+        "category": "Receptor Tyrosine Kinase / Oncology",
+        "description": "Orphan receptor tyrosine kinase overexpressed in ~20% of breast cancers. Forms active heterodimers with EGFR and HER3.",
+        "active_residues": ["Lys753", "Thr798", "Leu796", "Cys805", "Asp863"],
+        "pocket_info": "Catalytic kinase domain with cysteine residue available for covalent coupling.",
+        "pocket_volume_text": "Pocket volume: Demo estimate / not experimentally validated",
+        "pocket_volume_val": 905.0,
+        "drugability_summary": "High drugability (0.93). Target for dual EGFR/HER2 and selective HER2 inhibitors.",
+        "default_ligand_name": "Tucatinib (CID 71496459)"
+    },
     "SARS-CoV-2 Mpro": {
         "pdb_id": "6LU7",
         "name": "SARS-CoV-2 Main Protease (Mpro / 3CLpro)",
@@ -31,37 +83,11 @@ PREDEFINED_TARGETS = {
         "category": "Viral Protease",
         "description": "Essential viral enzyme cleaving polyproteins during viral replication. Key therapeutic target for broad-spectrum coronavirus inhibitors.",
         "active_residues": ["His41", "Cys145", "Gly143", "Glu166"],
-        "pocket_info": "Catalytic dyad Cys145-His41 in deep substrate binding cleft. Hydrophobic S1/S2/S4 sub-pockets.",
+        "pocket_info": "Catalytic dyad Cys145-His41 in deep substrate binding cleft.",
         "pocket_volume_text": "Pocket volume: Demo estimate / not experimentally validated",
-        "pocket_volume_val": 842.5,  # Å³ demo estimate
+        "pocket_volume_val": 842.5,
         "drugability_summary": "High drugability score (0.88). Well-defined catalytic pocket with covalent coupling potential.",
-        "default_ligand_name": "N3 Inhibitor"
-    },
-    "EGFR Kinase T790M": {
-        "pdb_id": "3W23",
-        "name": "Epidermal Growth Factor Receptor Kinase (T790M Mutation)",
-        "disease": "Non-Small Cell Lung Cancer (NSCLC)",
-        "category": "Oncology / Receptor Tyrosine Kinase",
-        "description": "Gatekeeper mutation T790M in EGFR kinase domain causing resistance to 1st/2nd generation TKIs.",
-        "active_residues": ["Met790", "Lys745", "Thr790", "Leu792", "Asp855"],
-        "pocket_info": "ATP-binding cleft modified by bulky methionine gatekeeper residue. Targeted by covalent 3rd-gen inhibitors.",
-        "pocket_volume_text": "Pocket volume: Demo estimate / not experimentally validated",
-        "pocket_volume_val": 915.0,  # Å³ demo estimate
-        "drugability_summary": "Moderate-to-high drugability (0.82). Requires gatekeeper accommodation and targeted covalent binding.",
-        "default_ligand_name": "Osimertinib-analog"
-    },
-    "Alzheimer's BACE1": {
-        "pdb_id": "4B70",
-        "name": "Beta-Secretase 1 (BACE1)",
-        "disease": "Alzheimer's Disease & Neurodegeneration",
-        "category": "Aspartyl Protease",
-        "description": "Transmembrane aspartic protease responsible for cleavage of Amyloid Precursor Protein (APP) yielding toxic Amyloid-beta peptides.",
-        "active_residues": ["Asp32", "Asp228", "Gly34", "Thr232", "Tyr71"],
-        "pocket_info": "Large open catalytic cleft with catalytic dyad Asp32/Asp228 and flexible 10s flap region.",
-        "pocket_volume_text": "Pocket volume: Demo estimate / not experimentally validated",
-        "pocket_volume_val": 1080.0,  # Å³ demo estimate
-        "drugability_summary": "Moderate drugability (0.75). Challenging large pocket requiring blood-brain barrier passage.",
-        "default_ligand_name": "Verubecestat-analog"
+        "default_ligand_name": "Nirmatrelvir (CID 155903259)"
     },
     "KRAS G12D": {
         "pdb_id": "7L10",
@@ -70,11 +96,24 @@ PREDEFINED_TARGETS = {
         "category": "Oncology / Small GTPase",
         "description": "Glycine-to-Aspartate point mutation at codon 12 locking KRAS into active GTP-bound signaling state.",
         "active_residues": ["Asp12", "Gly13", "Lys16", "Thr35", "Gln61"],
-        "pocket_info": "Switch-II cryptic pocket adjacent to mutant Asp12 residue allowing selective salt-bridge targeting.",
+        "pocket_info": "Switch-II cryptic pocket adjacent to mutant Asp12 residue.",
         "pocket_volume_text": "Pocket volume: Demo estimate / not experimentally validated",
-        "pocket_volume_val": 765.0,  # Å³ demo estimate
-        "drugability_summary": "High drugability (0.85). Historically 'undruggable' target recently unlocked via cryptic Switch-II pocket.",
-        "default_ligand_name": "MRTX1133-analog"
+        "pocket_volume_val": 765.0,
+        "drugability_summary": "High drugability (0.85). Unlocked via cryptic Switch-II pocket.",
+        "default_ligand_name": "Adagrasib (CID 137452656)"
+    },
+    "Alzheimer's BACE1": {
+        "pdb_id": "4B70",
+        "name": "Beta-Secretase 1 (BACE1)",
+        "disease": "Alzheimer's Disease & Neurodegeneration",
+        "category": "Aspartyl Protease",
+        "description": "Transmembrane aspartic protease responsible for cleavage of Amyloid Precursor Protein (APP) yielding toxic Amyloid-beta peptides.",
+        "active_residues": ["Asp32", "Asp228", "Gly34", "Thr232", "Tyr71"],
+        "pocket_info": "Large open catalytic cleft with catalytic dyad Asp32/Asp228.",
+        "pocket_volume_text": "Pocket volume: Demo estimate / not experimentally validated",
+        "pocket_volume_val": 1080.0,
+        "drugability_summary": "Moderate drugability (0.75). Challenging large pocket requiring blood-brain barrier passage.",
+        "default_ligand_name": "Verubecestat (CID 71732661)"
     }
 }
 

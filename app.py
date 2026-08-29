@@ -43,8 +43,15 @@ from report_generator import generate_scientific_html_report
 inject_custom_css()
 initialize_session_state()
 
-# Load candidate database
-df_candidates = load_candidate_database()
+# Target Selection setup
+target_keys = list(PREDEFINED_TARGETS.keys())
+if st.session_state["selected_target_key"] not in target_keys:
+    st.session_state["selected_target_key"] = target_keys[0]
+
+# Load candidate database from PubChem service for active target
+df_candidates = load_candidate_database(target_name=st.session_state["selected_target_key"])
+data_source_badge = df_candidates.attrs.get("data_source_label", "PubChem Data Source")
+status_message = df_candidates.attrs.get("status_msg", "")
 
 # Top Header Bar & Judge Demo Tour Trigger
 col_title, col_tour = st.columns([3, 1])
@@ -131,7 +138,29 @@ if st.session_state["tour_active"]:
 
 # Sidebar Navigation
 st.sidebar.markdown(f"<h2 style='color:{THEME_COLORS['primary']}; margin-bottom:0;'>Q-DRUG</h2>", unsafe_allow_html=True)
-st.sidebar.markdown("<p style='font-size:0.8rem; color:#94A3B8;'>Quantum Biotech Platform</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p style='font-size:0.8rem; color:#94A3B8;'>Quantum-Inspired Drug Discovery Platform</p>", unsafe_allow_html=True)
+st.sidebar.markdown("---")
+
+# Active Target Selection
+selected_sidebar_target = st.sidebar.selectbox(
+    "🎯 Select Target Receptor:",
+    target_keys,
+    index=target_keys.index(st.session_state["selected_target_key"]),
+    key="sb_target_selector"
+)
+if selected_sidebar_target != st.session_state["selected_target_key"]:
+    st.session_state["selected_target_key"] = selected_sidebar_target
+    st.rerun()
+
+st.sidebar.markdown(f"""
+<div style="background:#0E1524; border:1px solid #1E293B; border-radius:8px; padding:10px; margin-top:8px;">
+    <div style="font-size:0.75rem; color:#94A3B8;">DATA SOURCE STATUS</div>
+    <div style="font-size:0.85rem; font-weight:bold; color:{'#00FF88' if 'Live' in data_source_badge else '#FFB300'}; margin-top:3px;">
+        {'🟢' if 'Live' in data_source_badge else '🟡'} {data_source_badge}
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 st.sidebar.markdown("---")
 
 nav_choice = st.sidebar.radio(
@@ -148,10 +177,16 @@ nav_choice = st.sidebar.radio(
 )
 
 st.sidebar.markdown("---")
-st.sidebar.markdown(f"**Target Selected:** `{st.session_state['selected_target_key']}`")
-st.sidebar.markdown(f"**Active Lead ID:** `{st.session_state['selected_candidate_id']}`")
+# Ensure candidate selector stays valid
+cand_ids = df_candidates["candidate_id"].tolist()
+if st.session_state.get("selected_candidate_id") not in cand_ids and cand_ids:
+    st.session_state["selected_candidate_id"] = cand_ids[0]
+
+sel_cand_sb = st.sidebar.selectbox("Active Lead Candidate:", cand_ids, index=cand_ids.index(st.session_state.get("selected_candidate_id", cand_ids[0])))
+st.session_state["selected_candidate_id"] = sel_cand_sb
+
 st.sidebar.markdown("---")
-st.sidebar.caption("Q-DRUG v2.0 Hackathon Edition\nPython • Streamlit • Qiskit/Sim • RDKit/Sim")
+st.sidebar.caption("Q-DRUG v2.0 Real PubChem Integration\nPubChem REST API • Python • Streamlit")
 
 
 # ==========================================
@@ -262,8 +297,10 @@ elif nav_choice == "1. Target Receptor Hub":
     
     with t_tab1:
         target_keys = list(PREDEFINED_TARGETS.keys())
-        selected_t_key = st.selectbox("Select Target Receptor:", target_keys, index=target_keys.index(st.session_state["selected_target_key"]))
-        st.session_state["selected_target_key"] = selected_t_key
+        selected_t_key = st.selectbox("Select Target Receptor:", target_keys, index=target_keys.index(st.session_state["selected_target_key"]), key="thub_target_selector")
+        if selected_t_key != st.session_state["selected_target_key"]:
+            st.session_state["selected_target_key"] = selected_t_key
+            st.rerun()
         
         t_info = PREDEFINED_TARGETS[selected_t_key]
         pdb_info = fetch_pdb_structure_info(t_info["pdb_id"])
@@ -439,54 +476,135 @@ elif nav_choice == "3. Simulated VQE Engine":
 # ==========================================
 elif nav_choice == "4. Screening VHTS":
     render_disclaimer_banner()
-    render_section_header("4. Screening VHTS", "Virtual High-Throughput Screening & Pareto Frontier Analysis", badge="MODULE 4")
-    
-    # Custom SMILES Submission
-    with st.expander("➕ Enter Custom SMILES Molecule for Screening"):
-        col_sm1, col_sm2 = st.columns([3, 1])
-        with col_sm1:
-            custom_smiles_input = st.text_input("SMILES String:", value="CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C")
-        with col_sm2:
-            st.markdown("<div style='margin-top:28px;'></div>", unsafe_allow_html=True)
-            submit_smiles_btn = st.button("Score Custom Molecule", use_container_width=True)
-            
-        if submit_smiles_btn:
-            res_sm = parse_and_score_custom_smiles(custom_smiles_input)
-            if "error" in res_sm:
-                st.error(res_sm["error"])
-            else:
-                st.success(f"Successfully Analyzed Custom Molecule! Q-DRUG Score: {res_sm['qdrug_score']}")
-                # Append to candidates dataset
-                df_candidates = pd.concat([df_candidates, pd.DataFrame([res_sm])], ignore_index=True)
-                df_candidates.to_csv("data/drugs.csv", index=False)
-                st.rerun()
+    render_section_header("4. Compound Screening & Ranking VHTS", "Real PubChem Compound Screening & Quantum-Inspired Candidate Ranking", badge="PUBCHEM INSIDE")
 
-    # VHTS Candidate Database Table
-    st.markdown("### Candidates Ranking Database")
+    # Status Header
+    sc1, sc2, sc3 = st.columns([1.5, 1, 1])
+    with sc1:
+        st.markdown(f"**Target Selected:** `{st.session_state['selected_target_key']}`")
+    with sc2:
+        st.markdown(f"**Compounds Screened:** `{len(df_candidates)} Real Compounds`")
+    with sc3:
+        st.markdown(f"**Data Source Status:** <span class=\"{'badge-pubchem' if 'Live' in data_source_badge else 'badge-cache'}\">{data_source_badge}</span>", unsafe_allow_html=True)
+
+    st.caption(status_message)
+    st.markdown("---")
+
+    # Candidate Ranking System Table
+    st.markdown("### 🏆 Real PubChem Candidates Ranking")
+    st.caption("Score labeled as **Quantum-Inspired Candidate Score**. Sourced from PubChem API / verified database.")
+
     df_sorted = df_candidates.sort_values(by="qdrug_score", ascending=False).reset_index(drop=True)
     df_sorted["Rank"] = df_sorted.index + 1
+    df_sorted["Quantum-Inspired Candidate Score"] = df_sorted["qdrug_score"].apply(lambda s: f"{s:.2f} / 100")
     df_sorted["Recommendation"] = df_sorted["qdrug_score"].apply(assign_recommendation_label)
-    
+
+    # Format SMILES column cleanly for display
+    df_display = df_sorted.copy()
+    if "canonical_smiles" not in df_display.columns:
+        df_display["canonical_smiles"] = df_display["smiles"]
+    if "pubchem_cid" not in df_display.columns:
+        df_display["pubchem_cid"] = 0
+    if "formula" not in df_display.columns:
+        df_display["formula"] = "N/A"
+
     st.dataframe(
-        df_sorted[["Rank", "candidate_id", "name", "target", "qdrug_score", "binding_affinity", "quantum_energy", "activity", "toxicity", "solubility", "Recommendation"]],
+        df_display[["Rank", "name", "pubchem_cid", "mw", "formula", "canonical_smiles", "Quantum-Inspired Candidate Score", "Recommendation"]],
+        column_config={
+            "Rank": st.column_config.NumberColumn("Rank", width="small"),
+            "name": st.column_config.TextColumn("Compound Name", width="medium"),
+            "pubchem_cid": st.column_config.NumberColumn("PubChem CID", format="%d", width="small"),
+            "mw": st.column_config.NumberColumn("Molecular Weight (Da)", format="%.2f", width="small"),
+            "formula": st.column_config.TextColumn("Formula", width="small"),
+            "canonical_smiles": st.column_config.TextColumn("SMILES", width="large"),
+            "Quantum-Inspired Candidate Score": st.column_config.TextColumn("Quantum-Inspired Candidate Score", width="medium"),
+            "Recommendation": st.column_config.TextColumn("Recommendation Tier", width="medium")
+        },
         use_container_width=True,
+        height=340
+    )
+
+    st.markdown("---")
+
+    # Candidate Detail Inspector Panel & Score Visualization
+    col_insp1, col_insp2 = st.columns([1.2, 1])
+
+    with col_insp1:
+        st.markdown("### 🔍 Interactive Compound Detail Inspector")
+        sel_comp_name = st.selectbox(
+            "Select Compound to Inspect Details:",
+            df_sorted["name"].tolist(),
+            index=0
+        )
+        selected_comp = df_sorted[df_sorted["name"] == sel_comp_name].iloc[0]
+        pubchem_link = selected_comp.get("pubchem_url") or f"https://pubchem.ncbi.nlm.nih.gov/compound/{selected_comp['pubchem_cid']}"
+
+        st.markdown(f"""
+        <div class="q-card-glow">
+            <h3 style="color:#00F0FF; margin-top:0;">{selected_comp['name']} &nbsp; <span style="font-size:0.9rem; color:#94A3B8;">(PubChem CID: {selected_comp['pubchem_cid']})</span></h3>
+            <p><b>IUPAC Name:</b> <i>{selected_comp.get('iupac_name', selected_comp['name'])}</i></p>
+            <p><b>Molecular Formula:</b> <code style="font-size:1.1rem; color:#00FF88;">{selected_comp.get('formula', 'N/A')}</code> &nbsp;|&nbsp; <b>Molecular Weight:</b> <code>{selected_comp['mw']:.2f} Da</code></p>
+            <p><b>Canonical SMILES:</b><br/><code style="font-size:0.85rem; color:#E2E8F0; word-break:break-all;">{selected_comp.get('canonical_smiles', selected_comp['smiles'])}</code></p>
+            <p><b>Isomeric SMILES:</b><br/><code style="font-size:0.85rem; color:#94A3B8; word-break:break-all;">{selected_comp.get('isomeric_smiles', selected_comp['smiles'])}</code></p>
+            <hr style="border-color:#1E2A45;"/>
+            <p><b>Quantum-Inspired Candidate Score:</b> <b style="color:#00F0FF; font-size:1.3rem;">{selected_comp['qdrug_score']:.2f} / 100</b> &nbsp; ({selected_comp['Recommendation']})</p>
+            <p><b>PubChem Database URL:</b> <a href="{pubchem_link}" target="_blank" style="color:#00F0FF;">View on PubChem ↗</a></p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col_insp2:
+        st.markdown("### 🖼️ PubChem 2D Structure Preview")
+        cid_val = selected_comp['pubchem_cid']
+        img_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid_val}/PNG" if cid_val else None
+        if img_url:
+            st.image(img_url, caption=f"{selected_comp['name']} (PubChem CID {cid_val})", width=260)
+        else:
+            st.info("Structure preview available online via PubChem CID.")
+
+    st.markdown("---")
+
+    # Visualization: Candidate Scores Bar Chart
+    st.markdown("### 📊 Quantum-Inspired Candidate Score Distribution")
+    fig_score_bar = px.bar(
+        df_sorted.head(10),
+        x="name",
+        y="qdrug_score",
+        color="qdrug_score",
+        color_continuous_scale="Viridis",
+        labels={"name": "Compound Name", "qdrug_score": "Quantum-Inspired Candidate Score"},
+        title=f"Top Candidates Ranked by Quantum-Inspired Candidate Score ({st.session_state['selected_target_key']})"
+    )
+    fig_score_bar.update_layout(
+        paper_bgcolor=THEME_COLORS["card_bg"],
+        plot_bgcolor="#0A0F1A",
+        font=dict(color=THEME_COLORS["text_main"]),
         height=320
     )
-    
+    st.plotly_chart(fig_score_bar, use_container_width=True)
+
     col_vhts1, col_vhts2 = st.columns([1.2, 1])
-    
+
     with col_vhts1:
         st.markdown("### Pareto Frontier Analysis")
         fig_pareto = generate_pareto_chart(df_sorted)
         st.plotly_chart(fig_pareto, use_container_width=True)
-        
+
     with col_vhts2:
         st.markdown("### Radar Profile Multi-Candidate Comparison")
-        sel_cands_radar = st.multiselect("Select up to 3 candidates:", df_sorted["candidate_id"].tolist(), default=df_sorted["candidate_id"].tolist()[:3], max_selections=3)
+        sel_cands_radar = st.multiselect("Select up to 3 candidates:", df_sorted["candidate_id"].tolist(), default=df_sorted["candidate_id"].tolist()[:min(3, len(df_sorted))], max_selections=3)
         if sel_cands_radar:
             df_radar_sel = df_sorted[df_sorted["candidate_id"].isin(sel_cands_radar)]
             fig_radar = generate_candidate_radar_chart(df_radar_sel)
             st.plotly_chart(fig_radar, use_container_width=True)
+
+    st.markdown("""
+    <div class="q-card" style="margin-top:20px; border-left: 4px solid #00F0FF;">
+        <b>Data Source:</b> Compound data sourced from PubChem.<br/>
+        <span style="font-size:0.85rem; color:#94A3B8;">
+            <b>Disclaimer:</b> Q-DRUG is a computational research prototype. Predictions require experimental and clinical validation and should not be interpreted as medical advice.
+        </span>
+    </div>
+    """, unsafe_allow_html=True)
 
 
 # ==========================================

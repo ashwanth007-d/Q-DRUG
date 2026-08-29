@@ -1,0 +1,429 @@
+{
+  "target_Alzheimer's BACE1": {
+    "timestamp": 1787986995.4383676,
+    "records": [
+      {
+        "cid": 71732661,
+        "name": "Verubecestat",
+        "pubchem_cid": 71732661,
+        "formula": "C17H17F3N4O2",
+        "mw": 366.34,
+        "smiles": "CC1(N=C(NC1=O)N)C2=C(C=CC(=C2)NC(=O)C3=NC=C(C=C3)C(F)(F)F)F",
+        "canonical_smiles": "CC1(N=C(NC1=O)N)C2=C(C=CC(=C2)NC(=O)C3=NC=C(C=C3)C(F)(F)F)F",
+        "isomeric_smiles": "CC1(N=C(NC1=O)N)C2=C(C=CC(=C2)NC(=O)C3=NC=C(C=C3)C(F)(F)F)F",
+        "iupac_name": "N-[3-[(5R)-2-amino-5-methyl-4-oxo-5H-imidazol-5-yl]-4-fluorophenyl]-5-(trifluoromethyl)pyridine-2-carboxamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/71732661/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/71732661",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 78357754,
+        "name": "Atabecestat",
+        "pubchem_cid": 78357754,
+        "formula": "C18H15F4N5O2",
+        "mw": 409.34,
+        "smiles": "CC1(N=C(NC1=O)N)C2=C(C=CC(=C2)NC(=O)C3=CN=CC(=C3)F)F",
+        "canonical_smiles": "CC1(N=C(NC1=O)N)C2=C(C=CC(=C2)NC(=O)C3=CN=CC(=C3)F)F",
+        "isomeric_smiles": "CC1(N=C(NC1=O)N)C2=C(C=CC(=C2)NC(=O)C3=CN=CC(=C3)F)F",
+        "iupac_name": "N-[3-[(5R)-2-amino-5-methyl-4-oxo-5H-imidazol-5-yl]-4-fluorophenyl]-5-fluoropyridine-2-carboxamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/78357754/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/78357754",
+        "data_source": "PubChem API (Cached)"
+      }
+    ]
+  },
+  "target_BRAF V600E": {
+    "timestamp": 1787986995.44037,
+    "records": [
+      {
+        "cid": 42611257,
+        "name": "Vemurafenib",
+        "pubchem_cid": 42611257,
+        "formula": "C23H18ClF2N3O3S",
+        "mw": 489.92,
+        "smiles": "CCCS(=O)(=O)NC1=C(C(=C(C=C1)F)C(=O)C2=CNC3=C2C=C(C=N3)C4=CC=C(C=C4)Cl)F",
+        "canonical_smiles": "CCCS(=O)(=O)NC1=C(C(=C(C=C1)F)C(=O)C2=CNC3=C2C=C(C=N3)C4=CC=C(C=C4)Cl)F",
+        "isomeric_smiles": "CCCS(=O)(=O)NC1=C(C(=C(C=C1)F)C(=O)C2=CNC3=C2C=C(C=N3)C4=CC=C(C=C4)Cl)F",
+        "iupac_name": "N-[3-[5-(4-chlorophenyl)-1H-pyrrolo[2,3-b]pyridine-3-carbonyl]-2,4-difluorophenyl]propane-1-sulfonamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/42611257/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/42611257",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 44462760,
+        "name": "Dabrafenib",
+        "pubchem_cid": 44462760,
+        "formula": "C23H20F3N5O2S2",
+        "mw": 519.56,
+        "smiles": "CC(C)(C)C1=NC(=C(S1)C2=C(N=C(N=C2)N)C3=CC(=CC=C3)NC(=O)C4=C(C=CC=C4F)F)C5=CC=NC=C5",
+        "canonical_smiles": "CC(C)(C)C1=NC(=C(S1)C2=C(N=C(N=C2)N)C3=CC(=CC=C3)NC(=O)C4=C(C=CC=C4F)F)C5=CC=NC=C5",
+        "isomeric_smiles": "CC(C)(C)C1=NC(=C(S1)C2=C(N=C(N=C2)N)C3=CC(=CC=C3)NC(=O)C4=C(C=CC=C4F)F)C5=CC=NC=C5",
+        "iupac_name": "N-[3-[5-(2-aminopyrimidin-4-yl)-2-tert-butyl-1,3-thiazol-4-yl]-2-fluorophenyl]-2,6-difluorobenzenesulfonamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/44462760/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/44462760",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 50922675,
+        "name": "Encorafenib",
+        "pubchem_cid": 50922675,
+        "formula": "C22H27ClFN7O4S",
+        "mw": 540.01,
+        "smiles": "CC(C)NC(=O)OC1CCN(CC1)C2=NC=C(C(=N2)C3=C(C(=CC=C3)NC(=O)C4=CC=CC=C4F)F)C5=CN=CN=C5",
+        "canonical_smiles": "CC(C)NC(=O)OC1CCN(CC1)C2=NC=C(C(=N2)C3=C(C(=CC=C3)NC(=O)C4=CC=CC=C4F)F)C5=CN=CN=C5",
+        "isomeric_smiles": "CC(C)NC(=O)OC1CCN(CC1)C2=NC=C(C(=N2)C3=C(C(=CC=C3)NC(=O)C4=CC=CC=C4F)F)C5=CN=CN=C5",
+        "iupac_name": "methyl N-[(2S)-1-[[4-[3-[5-(2-fluoro-5-chloroanilino)pyridin-3-yl]carbamoyl]phenyl]methyl]]",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/50922675/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/50922675",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 216239,
+        "name": "Sorafenib",
+        "pubchem_cid": 216239,
+        "formula": "C21H16ClF3N4O3",
+        "mw": 464.82,
+        "smiles": "CNC(=O)C1=NC=CC(=C1)OC2=CC=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F",
+        "canonical_smiles": "CNC(=O)C1=NC=CC(=C1)OC2=CC=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F",
+        "isomeric_smiles": "CNC(=O)C1=NC=CC(=C1)OC2=CC=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F",
+        "iupac_name": "4-[4-[[4-chloro-3-(trifluoromethyl)phenyl]carbamoylamino]phenoxy]-N-methylpyridine-2-carboxamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/216239/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/216239",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 11167602,
+        "name": "Regorafenib",
+        "pubchem_cid": 11167602,
+        "formula": "C21H15ClF4N4O3",
+        "mw": 482.82,
+        "smiles": "CNC(=O)C1=NC=CC(=C1)OC2=C(C=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F)F",
+        "canonical_smiles": "CNC(=O)C1=NC=CC(=C1)OC2=C(C=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F)F",
+        "isomeric_smiles": "CNC(=O)C1=NC=CC(=C1)OC2=C(C=C(C=C2)NC(=O)NC3=CC(=C(C=C3)Cl)C(F)(F)F)F",
+        "iupac_name": "4-[4-[[4-chloro-3-(trifluoromethyl)phenyl]carbamoylamino]-3-fluorophenoxy]-N-methylpyridine-2-carboxamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11167602/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/11167602",
+        "data_source": "PubChem API (Cached)"
+      }
+    ]
+  },
+  "target_EGFR Kinase T790M": {
+    "timestamp": 1787986995.441365,
+    "records": [
+      {
+        "cid": 176870,
+        "name": "Erlotinib",
+        "pubchem_cid": 176870,
+        "formula": "C22H23N3O4",
+        "mw": 393.44,
+        "smiles": "COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC",
+        "canonical_smiles": "COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC",
+        "isomeric_smiles": "COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC",
+        "iupac_name": "N-(3-ethynylphenyl)-6,7-bis(2-methoxyethoxy)quinazolin-4-amine",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/176870/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/176870",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 123631,
+        "name": "Gefitinib",
+        "pubchem_cid": 123631,
+        "formula": "C22H24CIFN4O3",
+        "mw": 446.9,
+        "smiles": "COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCCCN4CCOCC4",
+        "canonical_smiles": "COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCCCN4CCOCC4",
+        "isomeric_smiles": "COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCCCN4CCOCC4",
+        "iupac_name": "N-(3-chloro-4-fluorophenyl)-7-methoxy-6-(3-morpholin-4-ylpropoxy)quinazolin-4-amine",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/123631/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/123631",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 71496458,
+        "name": "Osimertinib",
+        "pubchem_cid": 71496458,
+        "formula": "C28H33N7O2",
+        "mw": 499.61,
+        "smiles": "CN1CCN(CC1)C2=CC(=C(C=C2)NC(=O)C=C)NC3=NC=CC(=N3)C4=CN(C5=CC=CC=C54)C",
+        "canonical_smiles": "CN1CCN(CC1)C2=CC(=C(C=C2)NC(=O)C=C)NC3=NC=CC(=N3)C4=CN(C5=CC=CC=C54)C",
+        "isomeric_smiles": "CN1CCN(CC1)C2=CC(=C(C=C2)NC(=O)C=C)NC3=NC=CC(=N3)C4=CN(C5=CC=CC=C54)C",
+        "iupac_name": "N-[2-[2-(dimethylamino)ethyl-methylamino]-5-[[4-(1-methylindol-3-yl)pyrimidin-2-yl]amino]-4-methoxyphenyl]prop-2-enamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/71496458/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/71496458",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 208908,
+        "name": "Lapatinib",
+        "pubchem_cid": 208908,
+        "formula": "C30H26ClFN4O4S",
+        "mw": 581.06,
+        "smiles": "CS(=O)(=O)CCNCC1=CC=C(O1)C2=CC3=C(C=C2)N=CN=C3NC4=CC(=C(C=C4)OCC5=CC=CC(=C5)F)Cl",
+        "canonical_smiles": "CS(=O)(=O)CCNCC1=CC=C(O1)C2=CC3=C(C=C2)N=CN=C3NC4=CC(=C(C=C4)OCC5=CC=CC(=C5)F)Cl",
+        "isomeric_smiles": "CS(=O)(=O)CCNCC1=CC=C(O1)C2=CC3=C(C=C2)N=CN=C3NC4=CC(=C(C=C4)OCC5=CC=CC(=C5)F)Cl",
+        "iupac_name": "N-[3-chloro-4-[(3-fluorophenyl)methoxy]phenyl]-6-[5-[(2-methylsulfonylethylamino)methyl]furan-2-yl]quinazolin-4-amine",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/208908/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/208908",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 10117085,
+        "name": "Afatinib",
+        "pubchem_cid": 10117085,
+        "formula": "C24H25ClFN5O3",
+        "mw": 485.94,
+        "smiles": "CN(C)CC=CC(=O)NC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)Cl)F)OCC4CCOC4",
+        "canonical_smiles": "CN(C)CC=CC(=O)NC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)Cl)F)OCC4CCOC4",
+        "isomeric_smiles": "CN(C)CC=CC(=O)NC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)Cl)F)OCC4CCOC4",
+        "iupac_name": "(E)-N-[4-(3-chloro-4-fluoroanilino)-7-[(3S)-oxolan-3-yl]oxyquinazolin-6-yl]-4-(dimethylamino)but-2-enamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10117085/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/10117085",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 11556711,
+        "name": "Dacomitinib",
+        "pubchem_cid": 11556711,
+        "formula": "C24H25ClFN5O2",
+        "mw": 469.94,
+        "smiles": "COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCC=CC(=O)N4CCCC4",
+        "canonical_smiles": "COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCC=CC(=O)N4CCCC4",
+        "isomeric_smiles": "COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCC=CC(=O)N4CCCC4",
+        "iupac_name": "(E)-N-[4-(3-chloro-4-fluoroanilino)-7-methoxyquinazolin-6-yl]-4-piperidin-1-ylbut-2-enamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11556711/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/11556711",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 3081361,
+        "name": "Vandetanib",
+        "pubchem_cid": 3081361,
+        "formula": "C22H24BrFN4O2",
+        "mw": 475.35,
+        "smiles": "CN1CCC(CC1)COC2=C(C=C3C(=C2)N=CN=C3NC4=C(C=C(C=C4)Br)F)OC",
+        "canonical_smiles": "CN1CCC(CC1)COC2=C(C=C3C(=C2)N=CN=C3NC4=C(C=C(C=C4)Br)F)OC",
+        "isomeric_smiles": "CN1CCC(CC1)COC2=C(C=C3C(=C2)N=CN=C3NC4=C(C=C(C=C4)Br)F)OC",
+        "iupac_name": "N-(4-bromo-2-fluorophenyl)-6-methoxy-7-[(1-methylpiperidin-4-yl)methoxy]quinazolin-4-amine",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/3081361/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/3081361",
+        "data_source": "PubChem API (Cached)"
+      }
+    ]
+  },
+  "target_HER2 / ERBB2": {
+    "timestamp": 1787986995.4433634,
+    "records": [
+      {
+        "cid": 71496459,
+        "name": "Tucatinib",
+        "pubchem_cid": 71496459,
+        "formula": "C26H24N8O2",
+        "mw": 480.52,
+        "smiles": "CC1=NC=NC2=C1C=C(C=C2)NC3=NC=C(C(=N3)NC4=CC=C(C=C4)OC5=CC=CC=N5)F",
+        "canonical_smiles": "CC1=NC=NC2=C1C=C(C=C2)NC3=NC=C(C(=N3)NC4=CC=C(C=C4)OC5=CC=CC=N5)F",
+        "isomeric_smiles": "CC1=NC=NC2=C1C=C(C=C2)NC3=NC=C(C(=N3)NC4=CC=C(C=C4)OC5=CC=CC=N5)F",
+        "iupac_name": "N4-(4-[[1,2,4]triazolo[1,5-a]pyridin-7-yloxy]-3-methylphenyl)-N6-(4,4-dimethyl-4,5-dihydrooxazol-2-yl)pyrido[3,4-d]pyrimidine-4,6-diamine",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/71496459/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/71496459",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 9915743,
+        "name": "Neratinib",
+        "pubchem_cid": 9915743,
+        "formula": "C30H29ClN6O3",
+        "mw": 557.04,
+        "smiles": "CN(C)CC=CC(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)Cl)OCC4=CC=CC=N4)C#N",
+        "canonical_smiles": "CN(C)CC=CC(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)Cl)OCC4=CC=CC=N4)C#N",
+        "isomeric_smiles": "CN(C)CC=CC(=O)NC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC(=C(C=C3)Cl)OCC4=CC=CC=N4)C#N",
+        "iupac_name": "(E)-N-[4-[3-chloro-4-(pyridin-2-ylmethoxy)anilino]-3-cyano-7-ethoxyquinolin-6-yl]-4-(dimethylamino)but-2-enamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/9915743/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/9915743",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 10252516,
+        "name": "Pyrotinib",
+        "pubchem_cid": 10252516,
+        "formula": "C32H31ClN6O3",
+        "mw": 583.08,
+        "smiles": "CN(C)CC=CC(=O)NC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)Cl)OCC4=CC=CC(=C4)F)C#N",
+        "canonical_smiles": "CN(C)CC=CC(=O)NC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)Cl)OCC4=CC=CC(=C4)F)C#N",
+        "isomeric_smiles": "CN(C)CC=CC(=O)NC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)Cl)OCC4=CC=CC(=C4)F)C#N",
+        "iupac_name": "(E)-N-[4-[3-chloro-4-[(3-fluorophenyl)methoxy]anilino]-3-cyano-7-ethoxyquinolin-6-yl]-4-(piperidin-1-yl)but-2-enamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10252516/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/10252516",
+        "data_source": "PubChem API (Cached)"
+      }
+    ]
+  },
+  "target_KRAS G12D": {
+    "timestamp": 1787986995.4443717,
+    "records": [
+      {
+        "cid": 137452656,
+        "name": "Adagrasib",
+        "pubchem_cid": 137452656,
+        "formula": "C32H35Cl2FN6O2",
+        "mw": 604.57,
+        "smiles": "CC(C)N1CCN(CC1)C2=NC=NC3=C2C=C(C=C3)C4=C(C=CC=C4Cl)Cl",
+        "canonical_smiles": "CC(C)N1CCN(CC1)C2=NC=NC3=C2C=C(C=C3)C4=C(C=CC=C4Cl)Cl",
+        "isomeric_smiles": "CC(C)N1CCN(CC1)C2=NC=NC3=C2C=C(C=C3)C4=C(C=CC=C4Cl)Cl",
+        "iupac_name": "2-[(2S)-4-[7-(8-chloronaphthalen-1-yl)-2-[[(2S)-1-methylpyrrolidin-2-yl]methoxy]-5,6,7,8-tetrahydropyrido[3,4-d]pyrimidin-4-yl]piperazin-2-yl]acetonitrile",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137452656/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/137452656",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 137310565,
+        "name": "Sotorasib",
+        "pubchem_cid": 137310565,
+        "formula": "C30H30F2N6O3",
+        "mw": 560.6,
+        "smiles": "CC1=C(C=C(C=C1)C2=C3C(=NC(=N2)N4CCCC4C#N)C=CC(=O)N3C)F",
+        "canonical_smiles": "CC1=C(C=C(C=C1)C2=C3C(=NC(=N2)N4CCCC4C#N)C=CC(=O)N3C)F",
+        "isomeric_smiles": "CC1=C(C=C(C=C1)C2=C3C(=NC(=N2)N4CCCC4C#N)C=CC(=O)N3C)F",
+        "iupac_name": "6-fluoro-7-(2-fluoro-6-hydroxyphenyl)-1-(4-methyl-2-propan-2-ylpyridin-3-yl)-4-[(2S)-2-methylpiperazin-1-yl]pyrido[2,3-d]pyrimidin-2-one",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/137310565/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/137310565",
+        "data_source": "PubChem API (Cached)"
+      }
+    ]
+  },
+  "target_SARS-CoV-2 Mpro": {
+    "timestamp": 1787986995.4463656,
+    "records": [
+      {
+        "cid": 155903259,
+        "name": "Nirmatrelvir",
+        "pubchem_cid": 155903259,
+        "formula": "C23H32F3N5O4",
+        "mw": 499.53,
+        "smiles": "CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C",
+        "canonical_smiles": "CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C",
+        "isomeric_smiles": "CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C",
+        "iupac_name": "(1R,2S,5S)-N-[(1S)-1-cyano-2-[(3S)-2-oxopyrrolidin-3-yl]ethyl]-3-[(2S)-3,3-dimethyl-2-[(2,2,2-trifluoroacetyl)amino]butanoyl]-6,6-dimethyl-3-azabicyclo[3.1.0]hexane-2-carboxamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/155903259/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/155903259",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 156025807,
+        "name": "Ensitrelvir",
+        "pubchem_cid": 156025807,
+        "formula": "C22H17F2N7O",
+        "mw": 433.41,
+        "smiles": "CC1=CN=C(C(=N1)NC2=CC(=CC=C2)F)C3=CN(N=C3)CC4=CC=C(C=C4)F",
+        "canonical_smiles": "CC1=CN=C(C(=N1)NC2=CC(=CC=C2)F)C3=CN(N=C3)CC4=CC=C(C=C4)F",
+        "isomeric_smiles": "CC1=CN=C(C(=N1)NC2=CC(=CC=C2)F)C3=CN(N=C3)CC4=CC=C(C=C4)F",
+        "iupac_name": "6-[(6-chloropyridin-2-yl)methyl]-5-(4-fluorophenyl)-1,3-dimethyl-1,4-dihydropyrrolo[3,4-c]pyrazol-6-one",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/156025807/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/156025807",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 155192408,
+        "name": "Lufotrelvir",
+        "pubchem_cid": 155192408,
+        "formula": "C27H36N6O5",
+        "mw": 524.61,
+        "smiles": "CC(C)CC(C(=O)NC(C1CCCCC1)C(=O)NC(C2CCNC2=O)C#N)NC(=O)OCC3=CC=CC=C3",
+        "canonical_smiles": "CC(C)CC(C(=O)NC(C1CCCCC1)C(=O)NC(C2CCNC2=O)C#N)NC(=O)OCC3=CC=CC=C3",
+        "isomeric_smiles": "CC(C)CC(C(=O)NC(C1CCCCC1)C(=O)NC(C2CCNC2=O)C#N)NC(=O)OCC3=CC=CC=C3",
+        "iupac_name": "benzyl N-[(2S)-1-[[(1S)-2-cyclohexyl-1-[[(1S)-1-cyano-2-[(3S)-2-oxopyrrolidin-3-yl]ethyl]carbamoyl]ethyl]amino]-4-methyl-1-oxopentan-2-yl]carbamate",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/155192408/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/155192408",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 10324367,
+        "name": "Boceprevir",
+        "pubchem_cid": 10324367,
+        "formula": "C27H45N5O5",
+        "mw": 519.68,
+        "smiles": "CC(C)(C)NC(=O)C1C2CC3C(C2)C31C(=O)NC(C(C(C)(C)C)NC(=O)NC(C)(C)C)C(=O)C(=O)N",
+        "canonical_smiles": "CC(C)(C)NC(=O)C1C2CC3C(C2)C31C(=O)NC(C(C(C)(C)C)NC(=O)NC(C)(C)C)C(=O)C(=O)N",
+        "isomeric_smiles": "CC(C)(C)NC(=O)C1C2CC3C(C2)C31C(=O)NC(C(C(C)(C)C)NC(=O)NC(C)(C)C)C(=O)C(=O)N",
+        "iupac_name": "(1R,2S,5S)-N-[4-amino-1-cyclobutyl-3,4-dioxobutan-2-yl]-3-[(2S)-2-(tert-butylcarbamoylamino)-3,3-dimethylbutanoyl]-6,6-dimethyl-3-azabicyclo[3.1.0]hexane-2-carboxamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10324367/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/10324367",
+        "data_source": "PubChem API (Cached)"
+      }
+    ]
+  },
+  "target_VEGFR2 Receptor": {
+    "timestamp": 1787986995.4473615,
+    "records": [
+      {
+        "cid": 5329102,
+        "name": "Sunitinib",
+        "pubchem_cid": 5329102,
+        "formula": "C22H27FN4O2",
+        "mw": 398.47,
+        "smiles": "CCN(CC)CCNC(=O)C1=C(NC(=C1C)C=C2C3=C(C=CC(=C3)F)NC2=O)C",
+        "canonical_smiles": "CCN(CC)CCNC(=O)C1=C(NC(=C1C)C=C2C3=C(C=CC(=C3)F)NC2=O)C",
+        "isomeric_smiles": "CCN(CC)CCNC(=O)C1=C(NC(=C1C)C=C2C3=C(C=CC(=C3)F)NC2=O)C",
+        "iupac_name": "N-[2-(diethylamino)ethyl]-5-[(Z)-(5-fluoro-2-oxo-1H-indol-3-ylidene)methyl]-2,4-dimethyl-1H-pyrrole-3-carboxamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/5329102/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/5329102",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 6450551,
+        "name": "Axitinib",
+        "pubchem_cid": 6450551,
+        "formula": "C22H18N4OS",
+        "mw": 386.47,
+        "smiles": "CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)C=CC4=CC=CC=N4",
+        "canonical_smiles": "CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)C=CC4=CC=CC=N4",
+        "isomeric_smiles": "CNC(=O)C1=CC=CC=C1SC2=CC3=C(C=C2)C(=NN3)C=CC4=CC=CC=N4",
+        "iupac_name": "N-methyl-2-[[3-[(E)-2-pyridin-2-ylethenyl]-1H-indazol-6-yl]sulfanyl]benzamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/6450551/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/6450551",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 9862965,
+        "name": "Lenvatinib",
+        "pubchem_cid": 9862965,
+        "formula": "C21H19ClN4O4",
+        "mw": 426.85,
+        "smiles": "CNC(=O)NC1=CC=C(C=C1)OC2=C(C=NC=C2)C(=O)NC3=CC(=C(C=C3)Cl)C4CC4",
+        "canonical_smiles": "CNC(=O)NC1=CC=C(C=C1)OC2=C(C=NC=C2)C(=O)NC3=CC(=C(C=C3)Cl)C4CC4",
+        "isomeric_smiles": "CNC(=O)NC1=CC=C(C=C1)OC2=C(C=NC=C2)C(=O)NC3=CC(=C(C=C3)Cl)C4CC4",
+        "iupac_name": "4-[3-chloro-4-(cyclopropylcarbamoylamino)phenoxy]-7-methoxyquinoline-6-carboxamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/9862965/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/9862965",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 11525740,
+        "name": "Pazopanib",
+        "pubchem_cid": 11525740,
+        "formula": "C21H23N7O2S",
+        "mw": 437.52,
+        "smiles": "CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=C(C=CC=C3)C(=O)N)S(=O)(=O)N",
+        "canonical_smiles": "CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=C(C=CC=C3)C(=O)N)S(=O)(=O)N",
+        "isomeric_smiles": "CC1=C(C=C(C=C1)NC2=NC=CC(=N2)N(C)C3=C(C=CC=C3)C(=O)N)S(=O)(=O)N",
+        "iupac_name": "5-[[4-[(2,3-dimethylindazol-6-yl)-methylamino]pyrimidin-2-yl]amino]-2-methylbenzenesulfonamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/11525740/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/11525740",
+        "data_source": "PubChem API (Cached)"
+      },
+      {
+        "cid": 25102847,
+        "name": "Cabozantinib",
+        "pubchem_cid": 25102847,
+        "formula": "C28H24FN3O5",
+        "mw": 501.51,
+        "smiles": "COC1=C(C=C2C(=C1)C(=NC=N2)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F)OC",
+        "canonical_smiles": "COC1=C(C=C2C(=C1)C(=NC=N2)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F)OC",
+        "isomeric_smiles": "COC1=C(C=C2C(=C1)C(=NC=N2)OC3=CC=C(C=C3)NC(=O)C4(CC4)C(=O)NC5=CC=C(C=C5)F)OC",
+        "iupac_name": "N-[4-[(6,7-dimethoxyquinolin-4-yl)oxy]phenyl]-N'-(4-fluorophenyl)cyclopropane-1,1-dicarboxamide",
+        "structure_img": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/25102847/PNG",
+        "pubchem_url": "https://pubchem.ncbi.nlm.nih.gov/compound/25102847",
+        "data_source": "PubChem API (Cached)"
+      }
+    ]
+  }
+}

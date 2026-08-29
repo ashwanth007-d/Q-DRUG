@@ -114,6 +114,26 @@ def inject_custom_css():
         font-weight: 600;
         display: inline-block;
     }}
+    .badge-pubchem {{
+        background-color: rgba(0, 255, 136, 0.15);
+        color: #00FF88;
+        border: 1px solid #00FF88;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: inline-block;
+    }}
+    .badge-cache {{
+        background-color: rgba(255, 179, 0, 0.15);
+        color: #FFB300;
+        border: 1px solid #FFB300;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: inline-block;
+    }}
     
     /* Pass/Fail Tags */
     .tag-pass {{
