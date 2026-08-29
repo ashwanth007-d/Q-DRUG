@@ -38,28 +38,61 @@ def inject_custom_css():
         font-weight: 400;
     }}
     
-    /* Custom Card Containers */
+    /* Glassmorphism & Hover Card Enhancements */
     .q-card {{
-        background: {THEME_COLORS['card_bg']};
-        border: 1px solid {THEME_COLORS['card_border']};
-        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(18, 25, 42, 0.9) 0%, rgba(13, 19, 31, 0.95) 100%);
+        border: 1px solid rgba(0, 240, 255, 0.15);
+        border-radius: 14px;
         padding: 1.25rem;
-        margin-bottom: 1rem;
-        box-shadow: 0 4px 20px rgba(0, 240, 255, 0.05);
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        margin-bottom: 1.2rem;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(8px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }}
     .q-card:hover {{
         border-color: {THEME_COLORS['primary']};
-        box-shadow: 0 6px 25px rgba(0, 240, 255, 0.12);
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+        transform: translateY(-2px);
     }}
     
     .q-card-glow {{
-        background: linear-gradient(145deg, #12192A 0%, #1A102F 100%);
+        background: linear-gradient(145deg, rgba(30, 16, 53, 0.95) 0%, rgba(10, 25, 47, 0.95) 100%);
         border: 1px solid {THEME_COLORS['secondary']};
-        border-radius: 12px;
+        border-radius: 14px;
         padding: 1.25rem;
-        margin-bottom: 1rem;
-        box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
+        margin-bottom: 1.2rem;
+        box-shadow: 0 0 25px rgba(138, 43, 226, 0.3);
+    }}
+    
+    /* Top Lead Winner Card */
+    .winner-card {{
+        background: linear-gradient(135deg, #1A1805 0%, #12192A 100%);
+        border: 2px solid #FFB300;
+        border-radius: 14px;
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 0 25px rgba(255, 179, 0, 0.25);
+    }}
+    
+    /* Target Selector Pill Buttons */
+    .target-pill {{
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin: 3px;
+        background: #0E1524;
+        border: 1px solid #1E293B;
+        color: #94A3B8;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }}
+    .target-pill-active {{
+        background: linear-gradient(135deg, #00F0FF 0%, #7000FF 100%);
+        color: #FFFFFF;
+        border: 1px solid #00F0FF;
+        box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
     }}
     
     /* Metric Card */
@@ -67,17 +100,22 @@ def inject_custom_css():
         background: #0E1524;
         border: 1px solid #1E293B;
         border-left: 4px solid {THEME_COLORS['primary']};
-        border-radius: 8px;
+        border-radius: 10px;
         padding: 1rem;
         text-align: center;
+        transition: transform 0.2s ease;
+    }}
+    .q-metric-card:hover {{
+        transform: translateY(-2px);
+        border-color: {THEME_COLORS['primary']};
     }}
     .q-metric-value {{
         font-size: 1.8rem;
-        font-weight: 700;
+        font-weight: 800;
         color: {THEME_COLORS['primary']};
     }}
     .q-metric-label {{
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         color: {THEME_COLORS['text_muted']};
         text-transform: uppercase;
         letter-spacing: 0.5px;

@@ -65,6 +65,19 @@ with col_tour:
         st.session_state["tour_active"] = True
         st.session_state["tour_step"] = 1
 
+# Quick Target Selection Pill Bar
+st.markdown("<div style='font-size:0.82rem; font-weight:bold; color:#94A3B8; margin-bottom:6px;'>🎯 QUICK TARGET HUB SELECTION:</div>", unsafe_allow_html=True)
+t_cols = st.columns(len(target_keys))
+for idx, tk in enumerate(target_keys):
+    btn_label = tk.split(" ")[0]
+    is_active = (tk == st.session_state["selected_target_key"])
+    if t_cols[idx].button(f"{'🎯 ' if is_active else ''}{btn_label}", key=f"t_hdr_btn_{idx}", use_container_width=True, type="primary" if is_active else "secondary"):
+        if not is_active:
+            st.session_state["selected_target_key"] = tk
+            st.rerun()
+
+st.markdown("---")
+
 # Render Judge Demo Tour Overlay Modal if active
 if st.session_state["tour_active"]:
     st.markdown("""
@@ -199,17 +212,17 @@ if nav_choice == "🏠 Main Dashboard":
     # Key Live Metrics
     m1, m2, m3, m4 = st.columns(4)
     with m1:
-        st.markdown("""
+        st.markdown(f"""
         <div class="q-metric-card">
-            <div class="q-metric-value">4 Target Hubs</div>
+            <div class="q-metric-value">{len(PREDEFINED_TARGETS)} Target Hubs</div>
             <div class="q-metric-label">Therapeutic Targets</div>
         </div>
         """, unsafe_allow_html=True)
     with m2:
         st.markdown(f"""
         <div class="q-metric-card">
-            <div class="q-metric-value">{len(df_candidates)} Leads</div>
-            <div class="q-metric-label">Screened Database</div>
+            <div class="q-metric-value">{len(df_candidates)} PubChem Leads</div>
+            <div class="q-metric-label">Active Screened Database</div>
         </div>
         """, unsafe_allow_html=True)
     with m3:
@@ -217,7 +230,7 @@ if nav_choice == "🏠 Main Dashboard":
         st.markdown(f"""
         <div class="q-metric-card">
             <div class="q-metric-value">{best_score:.1f} / 100</div>
-            <div class="q-metric-label">Top Q-DRUG Score</div>
+            <div class="q-metric-label">Top Candidate Score</div>
         </div>
         """, unsafe_allow_html=True)
     with m4:
@@ -490,17 +503,55 @@ elif nav_choice == "4. Screening VHTS":
     st.caption(status_message)
     st.markdown("---")
 
-    # Candidate Ranking System Table
-    st.markdown("### 🏆 Real PubChem Candidates Ranking")
-    st.caption("Score labeled as **Quantum-Inspired Candidate Score**. Sourced from PubChem API / verified database.")
-
     df_sorted = df_candidates.sort_values(by="qdrug_score", ascending=False).reset_index(drop=True)
     df_sorted["Rank"] = df_sorted.index + 1
     df_sorted["Quantum-Inspired Candidate Score"] = df_sorted["qdrug_score"].apply(lambda s: f"{s:.2f} / 100")
     df_sorted["Recommendation"] = df_sorted["qdrug_score"].apply(assign_recommendation_label)
 
-    # Format SMILES column cleanly for display
-    df_display = df_sorted.copy()
+    # 🥇 Top Ranked Candidate Lead Pick Card
+    top_winner = df_sorted.iloc[0]
+    top_link = top_winner.get("pubchem_url") or f"https://pubchem.ncbi.nlm.nih.gov/compound/{top_winner['pubchem_cid']}"
+    
+    st.markdown(f"""
+    <div class="winner-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+                <span style="background:#FFB300; color:#0A0E17; font-weight:800; padding:3px 10px; border-radius:12px; font-size:0.8rem;">🥇 #1 TOP RANKED CANDIDATE LEAD</span>
+                <h3 style="color:#FFB300; margin:6px 0 0 0;">{top_winner['name']} &nbsp; <span style="font-size:0.9rem; color:#94A3B8;">(PubChem CID: {top_winner['pubchem_cid']})</span></h3>
+                <p style="margin:4px 0 0 0; color:#E2E8F0;"><b>Formula:</b> {top_winner.get('formula', 'N/A')} &nbsp;|&nbsp; <b>Molecular Weight:</b> {top_winner['mw']:.2f} Da &nbsp;|&nbsp; <b>Target:</b> {top_winner['target']}</p>
+            </div>
+            <div style="text-align:right;">
+                <div style="font-size:0.8rem; color:#94A3B8;">QUANTUM-INSPIRED SCORE</div>
+                <div style="font-size:2.2rem; font-weight:800; color:#00FF88;">{top_winner['qdrug_score']:.2f}<span style="font-size:1rem; color:#94A3B8;"> / 100</span></div>
+                <a href="{top_link}" target="_blank" style="color:#00F0FF; font-weight:bold; font-size:0.85rem;">View on PubChem ↗</a>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Live Search & Score Filters
+    f_col1, f_col2 = st.columns([2, 1])
+    with f_col1:
+        search_query = st.text_input("🔎 Search Compounds (Name, CID, Formula, SMILES):", value="", placeholder="Type candidate name or CID...")
+    with f_col2:
+        min_score_filter = st.slider("Filter Min Q-DRUG Score:", min_value=50.0, max_value=95.0, value=65.0, step=1.0)
+
+    # Apply filters
+    df_filtered = df_sorted[df_sorted["qdrug_score"] >= min_score_filter].copy()
+    if search_query.strip():
+        sq = search_query.strip().lower()
+        df_filtered = df_filtered[
+            df_filtered["name"].str.lower().str.contains(sq) |
+            df_filtered["pubchem_cid"].astype(str).str.contains(sq) |
+            df_filtered["formula"].str.lower().str.contains(sq) |
+            df_filtered["smiles"].str.lower().str.contains(sq)
+        ]
+
+    # Candidate Ranking System Table
+    st.markdown(f"### 🏆 Candidates Ranking Table ({len(df_filtered)} matching compounds)")
+    st.caption("Score labeled as **Quantum-Inspired Candidate Score**. Sourced from PubChem database.")
+
+    df_display = df_filtered.copy()
     if "canonical_smiles" not in df_display.columns:
         df_display["canonical_smiles"] = df_display["smiles"]
     if "pubchem_cid" not in df_display.columns:
@@ -521,7 +572,7 @@ elif nav_choice == "4. Screening VHTS":
             "Recommendation": st.column_config.TextColumn("Recommendation Tier", width="medium")
         },
         use_container_width=True,
-        height=340
+        height=320
     )
 
     st.markdown("---")
